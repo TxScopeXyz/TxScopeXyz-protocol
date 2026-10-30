@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TxScope | Live pool lens for Robinhood Chain</title>
+<meta name="description" content="TxScope tracks the pools drawing the most attention on Robinhood Chain: price, momentum, turnover and depth, kept current on its own.">
+<meta property="og:title" content="TxScope">
+<meta property="og:description" content="A live lens on the busiest pools on Robinhood Chain.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,700..900&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/main.css">
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i data-progress></i></div>
+<a class="skip" href="#market">Skip to the market</a>
+
+<div class="top">
+  <header class="hdr">
+    <div class="wrap hdr-row">
+      <a class="brand" href="#top" aria-label="TxScope, back to top">
+        <img src="assets/logo-128.png" width="40" height="40" alt="" decoding="async">
+        <span class="brand-name">TxScope</span>
+      </a>
+      <nav class="nav nav-d" aria-label="Sections">
+        <a href="#market">Market</a><a href="#method">Method</a><a href="#flow">Flow</a><a href="#network">Network</a>
+      </nav>
+      <div class="socials" role="group" aria-label="Social links">{{SOCIALS}}</div>
+    </div>
+  </header>
+  {{CA}}
+</div>
+<nav class="nav-m" aria-label="Sections">
+  <a href="#market">Market</a><a href="#method">Method</a><a href="#flow">Flow</a><a href="#network">Network</a>
+</nav>
+
+<main id="top">
+  <section class="hero" data-hero>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="mesh mesh-a" data-depth="0.25"></div>
+      <div class="mesh mesh-b" data-depth="0.5"></div>
+      <div class="mesh mesh-c" data-depth="0.35"></div>
+    </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal><i class="sweep"></i>Live pool lens</p>
+        <h1 class="display hero-title" data-reveal>Read the tape before it turns.</h1>
+        <p class="lede" data-reveal>TxScope lines up the busiest pools on Robinhood Chain and keeps the numbers current, so you can see where the attention is gathering.</p>
+        <p class="lede-2" data-reveal>Price, momentum, turnover and depth for ten pools, in one place.</p>
+        <ul class="chips" data-reveal aria-label="Highlights">
+          <li class="chip">Live pools</li><li class="chip">Top ten</li><li class="chip">Self-refreshing</li>
+        </ul>
+        <div class="cta" data-reveal>
+          <a class="btn btn-primary" href="#market">See the market</a>
+          <a class="btn btn-ghost" href="#method">How it works</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="reticle" data-depth="0.9" viewBox="0 0 400 400" focusable="false">
+          <g class="ret-spin" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="200" cy="200" r="190" stroke-dasharray="2 8"/>
+            <circle cx="200" cy="200" r="150"/>
+            <circle cx="200" cy="200" r="110" stroke-dasharray="40 14"/>
+          </g>
+          <g fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="200" cy="200" r="70"/>
+            <path d="M200 6v78M200 316v78M6 200h78M316 200h78"/>
+          </g>
+        </svg>
+        <img class="hero-logo" data-depth="1.3" src="assets/logo-512.png" width="512" height="512" alt="TxScope logo" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <section class="section market" id="market">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="eyebrow"><i class="sweep"></i>Trending now</p>
+          <h2 class="display h2">The ten pools in motion</h2>
+        </div>
+        <div class="status" role="status" aria-live="polite" data-status data-state="loading">
+          <i class="dot" aria-hidden="true"></i><span data-status-text>Connecting</span>
+        </div>
+      </div>
+
+      <div class="tiles" data-stagger>
+        <div class="tile" data-spot data-reveal><span class="tile-label">Pools shown</span><span class="tile-val" data-stat="count"><i class="sk sk-stat"></i></span></div>
+        <div class="tile" data-spot data-reveal><span class="tile-label">Volume, 24h</span><span class="tile-val" data-stat="vol"><i class="sk sk-stat"></i></span></div>
+        <div class="tile" data-spot data-reveal><span class="tile-label">Depth in pools</span><span class="tile-val" data-stat="liq"><i class="sk sk-stat"></i></span></div>
+        <div class="tile" data-spot data-reveal><span class="tile-label">Strongest mover</span><span class="tile-val" data-stat="mover"><i class="sk sk-stat"></i></span></div>
+      </div>
+
+      <div class="ticker" data-reveal aria-hidden="true"><div class="ticker-track" data-ticker>{{TICKER}}</div></div>
+
+      <div class="panel" data-reveal>
+        <div class="panel-bar">
+          <div class="tabs" role="tablist" aria-label="Order pools by">
+            <button class="tab" role="tab" type="button" aria-selected="true" data-sort="trend">Trending</button>
+            <button class="tab" role="tab" type="button" aria-selected="false" data-sort="vol">Volume</button>
+            <button class="tab" role="tab" type="button" aria-selected="false" data-sort="liq">Depth</button>
+            <button class="tab" role="tab" type="button" aria-selected="false" data-sort="chg">Momentum</button>
+          </div>
+        </div>
+        <div class="thead" aria-hidden="true"><span>#</span><span>Pair</span><span>Price</span><span>24h</span><span>Volume</span><span>Depth</span><span></span></div>
+        <ol class="rows" data-rows>
+{{ROWS}}
+        </ol>
+        <p class="market-error" role="alert" data-error hidden>The market feed is not answering. The page retries on its own.</p>
+      </div>
+      <p class="fine">Figures come from a third-party pool index. They can lag, drift or be wrong. Nothing here is advice.</p>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="eyebrow"><i class="sweep"></i>Method</p>
+          <h2 class="display h2">From noise to signal in three moves</h2>
+        </div>
+      </div>
+      <p class="sec-lede" data-reveal>A pool that suddenly draws volume tells you something before the headline does. TxScope watches the index for those moments, ranks what it finds, and lets you re-order the list to suit the question you are asking.</p>
+      <ol class="steps" data-stagger>
+        <li class="step" data-reveal><span class="step-n display">1</span><h3>Locate</h3><p>At load, the page asks the index which network id belongs to Robinhood Chain. Nothing is wired in by hand.</p></li>
+        <li class="step" data-reveal><span class="step-n display">2</span><h3>Rank</h3><p>The index returns its trending pools. The first ten are shown, and you can re-sort them by volume, depth or momentum.</p></li>
+        <li class="step" data-reveal><span class="step-n display">3</span><h3>Renew</h3><p>Numbers refresh every minute and rest while the tab is out of sight. A failed refresh never wipes what you already see.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section flow-wrap" id="flow">
+    <div class="wrap">
+      <div class="flow" data-reveal>
+        <div class="flow-head">
+          <h2 class="display h2">Where the flow goes</h2>
+          <p>Reward and allocation figures are not final, so every slot below stays blank. Each one fills in the moment its number is confirmed, and not before.</p>
+        </div>
+        {{FLOWBAR}}
+        <div class="tiles tiles-4" data-stagger>{{FLOWTILES}}</div>
+        <p class="fine">Slots show a label and the word pending until a figure is stated.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="network">
+    <div class="wrap net-grid">
+      <div class="net-main">
+        <div class="sec-head" data-reveal>
+          <div>
+            <p class="eyebrow"><i class="sweep"></i>Token and network</p>
+            <h2 class="display h2 accent">Facts, once they exist</h2>
+          </div>
+        </div>
+        <ul class="dashlist" data-stagger>
+          <li data-reveal>Every market figure on this page is read from a public index, never typed in.</li>
+          <li data-reveal>Contract details stay blank until they are formally announced.</li>
+          <li data-reveal>Chain parameters below are taken from the team's own statement.</li>
+          <li data-reveal>Allocation numbers are held back until they are final.</li>
+        </ul>
+        <ul class="recs" data-stagger>
+          <li class="rec rec-wide" data-rec="chain-id" data-reveal><span class="rec-label">Chain ID</span><code class="rec-code">{{CHAINID}}</code><button class="icon-btn" type="button" data-copy="{{CHAINID}}" aria-label="Copy chain ID">{{COPYICON}}</button></li>
+          <li class="rec rec-wide" data-rec="rpc" data-reveal><span class="rec-label">RPC</span><code class="rec-code">{{RPC}}</code><button class="icon-btn" type="button" data-copy="{{RPC}}" aria-label="Copy RPC endpoint">{{COPYICON}}</button></li>
+          {{REC_EXPLORER}}{{REC_DOCS}}{{REC_AUDIT}}
+        </ul>
+      </div>
+      <div class="net-art" aria-hidden="true">
+        <svg class="reticle reticle-soft" data-depth="0.6" viewBox="0 0 400 400" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="110"/><circle cx="200" cy="200" r="70"/><path d="M200 6v388M6 200h388"/></g></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rules">
+    <div class="wrap">
+      <div class="sec-head" data-reveal><div><p class="eyebrow"><i class="sweep"></i>Ground rules</p><h2 class="display h2">What this page will not do</h2></div></div>
+      <ul class="rules" data-stagger>
+        <li data-reveal>No forecasts. What you see is what has already traded.</li>
+        <li data-reveal>No wallet prompts and no signing requests, ever.</li>
+        <li data-reveal>No hand-typed figures. When a number is missing, it shows a dash.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="closer" data-reveal>
+        <h2 class="display h2">Keep the lens <span class="accent">on the move.</span></h2>
+        <div class="cta"><a class="btn btn-primary" href="#market">Back to the market</a><a class="link" href="#network">Network details</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="#top" aria-label="TxScope, back to top"><img src="assets/logo-128.png" width="40" height="40" alt="" loading="lazy" decoding="async"><span class="brand-name">TxScope</span></a>
+      <p class="display foot-tag">See it move. Know where.</p>
+    </div>
+    <div class="foot-cols">
+      <nav class="foot-nav" aria-label="Footer"><a href="#market">Market</a><a href="#method">Method</a><a href="#flow">Flow</a><a href="#network">Network</a><a href="#rules">Rules</a></nav>
+      <p>TxScope is an early-stage tool. Review the ground rules before leaning on anything shown here.</p>
+      <p>Built for Robinhood Chain, using a public pool index.</p>
+    </div>
+  </div>
+</footer>
+<div class="sr-only" aria-live="polite" data-live></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

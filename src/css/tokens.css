@@ -1,0 +1,57 @@
+/*
+  tokens.css is the only file in the project allowed to hold colour literals.
+  Provenance for every px-* value: k-means (k=8, 40,000 sampled opaque px, seed 0) run over
+  brand/ and reference/. Each centroid was snapped to the nearest real pixel; (x,y) is that pixel.
+  The one exception outside this file is favicon.svg, whose fill is px-orange (gate-checked).
+*/
+:root {
+  --px-orange: #fd5901;     /* LOGO TXSCOPE PNG...png, 81.8% cluster, centroid fd5901, px (476,568) */
+  --px-cream: #f5f2ed;      /* TXSCOPE 1.jpg, 92.0% cluster, centroid f5f2ec, px (267,18) */
+  --px-ink: #020100;        /* TXSCOPE 1.jpg, 2.9% cluster, centroid 020101, px (129,18) */
+  --px-ink-warm: #0f0a07;   /* SAMPUL TXSCOPE JPG, 19.3% cluster, centroid 100a07, px (997,0) */
+  --px-grey: #585550;       /* TXSCOPE 1.jpg, 0.8% cluster, centroid 575550, px (98,42) */
+  --px-grey-line: #bbbab6;  /* TXSCOPE 1.jpg, 0.6% cluster, centroid bcbab6, px (79,25) */
+  --px-sand: #e5c7af;       /* SAMPUL TXSCOPE JPG, 5.2% cluster, centroid e4c9ad, px (792,103) */
+  --px-amber: #f09b5b;      /* SAMPUL TXSCOPE JPG, 5.0% cluster, centroid ef9c5b, px (1388,35) */
+  --px-umber: #41271a;      /* SAMPUL TXSCOPE JPG, 9.8% cluster, centroid 41271a, px (911,60) */
+  --px-peach: #f7bf9c;      /* TXSCOPE 1.jpg, 0.2% cluster, centroid f9be9c, px (1294,451) */
+
+  /* semantic layer: mixes of the sampled values only */
+  --bg: var(--px-cream);
+  --fg: var(--px-ink);
+  --fg-soft: var(--px-ink-warm);
+  --muted: var(--px-grey);
+  --border: color-mix(in srgb, var(--px-grey-line) 75%, var(--px-cream));
+  --border-strong: var(--px-grey-line);
+  --surface: color-mix(in srgb, var(--px-sand) 38%, var(--px-cream));
+  --card: color-mix(in srgb, var(--px-cream) 55%, white);
+  --accent: var(--px-orange);
+  --accent-ink: color-mix(in srgb, var(--px-orange) 55%, var(--px-umber));
+  --accent-wash: color-mix(in srgb, var(--px-peach) 40%, var(--px-cream));
+  --accent-glow: color-mix(in srgb, var(--px-orange) 18%, transparent);
+  --shade: color-mix(in srgb, var(--px-ink) 8%, transparent);
+
+  /* geometry measured on the reference at 1440 wide */
+  --wrap: 1120px;
+  --gutter: 32px;
+  --header-h: 80px;
+  --radius: 6px;
+  --tap: 44px;
+
+  /* motion measured on the reference: 150ms default, 200/300/500/1000 steps, 900ms sweep */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-pulse: cubic-bezier(0.4, 0, 0.6, 1);
+  --t-fast: 150ms;
+  --t-base: 200ms;
+  --t-med: 300ms;
+  --t-slow: 500ms;
+  --t-sweep: 900ms;
+
+  --font-display: "Big Shoulders Stencil", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (max-width: 640px) {
+  :root { --gutter: 20px; --header-h: 64px; }
+}

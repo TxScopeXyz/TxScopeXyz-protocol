@@ -1,0 +1,35 @@
+Volatility farming
+Get paid for the chop.
+Wrap a token into a log. Farm its paired market. Harvest $CHOP rewards. Every wrap, unwrap and trade fee buys back $CHOP.
+Crypto, stock and meme pairs bring volatility farming to new markets on Robinhood Chain.
+Crypto Stocks Meme pairs Open the logs Read the docs Loading logs
+Why swings pay
+When the market chops, a log token's price drifts away from the token it holds. Traders close the gap by wrapping, unwrapping and trading, and every one of those moves pays fees. After the burns and any partner share, the rest is swapped for $CHOP: 20% is burned and 80% goes to farmers.
+Wrap Deposit a token, get its log token.
+Farm Once the pool is seeded, add its paired token and stake the liquidity.
+Harvest Claim your share of the $CHOP paid to farmers.
+How fees are split
+From every 10,000 of fee value, 15% is burned as log tokens. With no partner fee, the remaining 85% is converted to $CHOP by the configured fee route; 20% of that $CHOP is burned and 80% is paid to farmers.
+Burned as log tokens 1,500 USDG equivalent
+$CHOP burned 1,700 USDG equivalent
+Paid to farmers 6,800 USDG equivalent
+Treasury 0 USDG equivalent
+Example using 10,000 USDG equivalent of fee value. The 1,700 and 6,800 figures are value equivalents, not $CHOP token amounts. The number of $CHOP tokens depends on its pool price. This assumes no partner fee and is not a forecast.
+If nobody is farming the log, the $CHOP that would have gone to farmers is burned instead.
+How fees work
+$CHOP
+Farmers pair log tokens with each log's selected pool asset.
+Traders arbitrage gaps between log prices and backing through those pools.
+After the log-token burn and any partner share, the rest is converted to $CHOP by the fee route.
+Of that $CHOP, 20% is burned and 80% goes to farmers.
+Contract Explorer About $CHOP
+What we won't do
+No yield forecasts. Historical APY uses what has happened on-chain, not guesses about what comes next.
+No leverage or borrowing.
+No unlimited approvals. You approve exactly what you use.
+Markets chop. Get paid for it.
+Open the logs Read the risks
+Logs Portfolio Docs Risks Contracts Mint X
+Chop is experimental software. Read the risks before depositing.
+Built on Robinhood Chain, utilizing proven peapod infrastructure
+Connect wallet Launch a log

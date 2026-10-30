@@ -1,0 +1,15 @@
+{
+  "name": "txscope",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TxScope: live market lens for Robinhood Chain",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs",
+    "serve": "node scripts/serve.mjs",
+    "assets": "python -I scripts/prep-assets.py"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

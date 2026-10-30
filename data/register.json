@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "note": "Every external fact is one record. state is stated, absent or unconfirmed. Only stated records may carry value or url. Dates live here as data and never reach the built page.",
+  "records": [
+    {
+      "id": "chain",
+      "label": "Chain",
+      "state": "stated",
+      "value": {
+        "name": "Robinhood Chain",
+        "chainId": "0x1237",
+        "rpc": "https://rpc.mainnet.chain.robinhood.com",
+        "scope": "batch-level"
+      },
+      "source": "client statement",
+      "recorded": "2026-10-30"
+    },
+    {
+      "id": "market-source",
+      "label": "Market source",
+      "state": "stated",
+      "value": {
+        "api": "https://api.geckoterminal.com/api/v2",
+        "secondary": "https://api.dexscreener.com/latest/dex/search?q=robinhood",
+        "slugTtlMs": 86400000,
+        "fallback": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ripple,pepe,dogecoin,shiba-inu,floki,bonk,brett,book-of-meme,popcat,mog-coin&order=volume_desc&per_page=10&page=1",
+        "networkId": "robinhood",
+        "networkPages": 6,
+        "pools": 10,
+        "pollMs": 60000
+      },
+      "source": "client statement, provider public API",
+      "recorded": "2026-10-30"
+    },
+    { "id": "ca", "label": "Contract", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "x", "label": "X", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "github", "label": "GitHub", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "explorer", "label": "Explorer", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "docs", "label": "Docs", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "audit", "label": "Audit", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "split-burn", "label": "Burn", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "split-rewards", "label": "Rewards", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "split-treasury", "label": "Treasury", "state": "absent", "recorded": "2026-10-30" },
+    { "id": "split-partners", "label": "Partners", "state": "absent", "recorded": "2026-10-30" }
+  ]
+}
